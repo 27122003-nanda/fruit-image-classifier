@@ -29,10 +29,6 @@ This model predicts *Apple, Banana, Grape, and Mango* using a CNN trained on the
   - Mango 1  
 
 ---
-
-## 📁 Project Structure
----
-
 ## ▶️ How to Run Locally
 
 ### 1️⃣ Install dependencies
