@@ -5,6 +5,11 @@ This model predicts *Apple, Banana, Grape, and Mango* using a CNN trained on the
 
 ---
 
+## 🚀 Live Demo
+🔗 Try the deployed app here: *Demo link coming soon*
+
+---
+
 ## 🚀 Features
 - Convolutional Neural Network (CNN)
 - Classifies 4 fruit types
@@ -15,9 +20,9 @@ This model predicts *Apple, Banana, Grape, and Mango* using a CNN trained on the
 ---
 
 ## 🧠 Model Information
-- Input size: *100 × 100*
-- Framework: TensorFlow / Keras
-- Classes:
+- *Input size:* 100 × 100  
+- *Framework:* TensorFlow / Keras  
+- *Classes:*  
   - Apple Red 1  
   - Banana 1  
   - Grape White 1  
@@ -33,7 +38,9 @@ This model predicts *Apple, Banana, Grape, and Mango* using a CNN trained on the
 ### 1️⃣ Install dependencies
 ### 2️⃣ Run the Streamlit app
 ### 3️⃣ Upload a fruit image  
-The model will display the predicted fruit + confidence score.
+The model will display:
+- Predicted fruit  
+- Confidence score  
 
 ---
 
@@ -43,6 +50,5 @@ This project uses images from the *Fruits-360 dataset* (public dataset).
 ---
 
 ## ✨ Author
-*Nanda*  
+*Nanda B R*  
 Engineering student exploring ML, DL, and app development.
-
