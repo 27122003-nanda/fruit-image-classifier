@@ -1,7 +1,7 @@
 import os
 os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
 import streamlit as st
-import tensorflow as tf
+import tensorflow.lite as tflite
 import numpy as np
 from tensorflow.keras.preprocessing import image
 
@@ -40,4 +40,5 @@ if uploaded_file is not None:
             confidence = np.max(predictions) * 100
 
         st.success(f"### 🥭 Predicted Fruit: *{predicted_class}*")
+
         st.info(f"Confidence: *{confidence:.2f}%*")
