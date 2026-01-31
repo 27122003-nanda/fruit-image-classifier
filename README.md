@@ -1,50 +1,124 @@
-# 🍎 Fruit Image Classifier
+# 🍎🍌 Fruit Image Classifier — Deep Learning + TFLite + Streamlit
 
-A deep learning project that classifies fruit images using *TensorFlow* and *Streamlit*.  
-This model predicts *Apple, Banana, Grape, and Mango* using a CNN trained on the Fruits-360 dataset.
+A lightweight, fast *fruit image classification app* built using *TensorFlow Lite* and deployed on *Hugging Face Spaces* with *Streamlit*.
+
+Upload an image of a fruit, and the model predicts whether it's:
+
+- 🍎 Apple Red  
+- 🍌 Banana  
+- 🍇 Grape White  
+- 🥭 Mango
 
 ---
 
 ## 🚀 Live Demo
-🔗 Try the deployed app here: *Demo link coming soon*
+
+Click the badge to open the app:
+
+[![Open in Spaces](https://huggingface.co/spaces/nandabr/fruit-image-classifier/badge.svg)](https://huggingface.co/spaces/nandabr/fruit-image-classifier)
 
 ---
 
-## 🚀 Features
-- Convolutional Neural Network (CNN)
-- Classifies 4 fruit types
-- Streamlit web app for easy image upload
-- TensorFlow model (TFLite version uploaded)
-- Clean & simple UI
+## 🧠 Model Overview
+
+This project uses:
+
+- TensorFlow / Keras  
+- Custom fruit dataset  
+- Preprocessing: resizing + normalization  
+- Exported to .tflite for fast inference  
+- Deployed with Streamlit UI  
 
 ---
 
-## 🧠 Model Information
-- *Input size:* 100 × 100  
-- *Framework:* TensorFlow / Keras  
-- *Classes:*  
-  - Apple Red 1  
-  - Banana 1  
-  - Grape White 1  
-  - Mango 1  
+## 🏗 Tech Stack
 
----
-## ▶️ How to Run Locally
-
-### 1️⃣ Install dependencies
-### 2️⃣ Run the Streamlit app
-### 3️⃣ Upload a fruit image  
-The model will display:
-- Predicted fruit  
-- Confidence score  
+| Component | Technology |
+|----------|------------|
+| Training | TensorFlow / Keras |
+| Inference | TensorFlow Lite |
+| UI | Streamlit |
+| Deployment | Hugging Face Spaces |
+| Language | Python |
 
 ---
 
-## 📦 Dataset
-This project uses images from the *Fruits-360 dataset* (public dataset).
+## 📂 Project Structure
+
+
+📦 fruit-image-classifier
+ ├── app.py               # Streamlit app
+ ├── fruit_model.tflite   # TFLite model
+ ├── requirements.txt     # Dependencies
+ ├── space.yaml           # HuggingFace runtime config
+ └── README.md            # Documentation
+
 
 ---
 
-## ✨ Author
+## ▶️ Run Locally
+
+### 1️⃣ Clone Repo
+bash
+git clone https://github.com/your-username/your-repo.git
+
+
+### 2️⃣ Install Dependencies
+bash
+pip install -r requirements.txt
+
+
+### 3️⃣ Run Streamlit App
+bash
+streamlit run app.py
+
+
+Then open:
+
+http://localhost:8501
+
+
+---
+
+## 📦 Requirements
+
+
+streamlit
+tensorflow
+numpy
+Pillow
+
+
+---
+
+## 🧩 How the Model Works
+
+1. User uploads an image  
+2. Image resized to *100×100*  
+3. Normalized to 0–1  
+4. Passed through TFLite interpreter  
+5. Highest probability = final prediction  
+
+---
+
+## 🔮 Future Enhancements
+
+- Add more fruit categories  
+- Improved dataset  
+- Add camera input  
+- Build Android app  
+- Real-time fruit detection  
+
+---
+
+## 👩‍💻 Author
+
 *Nanda B R*  
-Engineering student exploring ML, DL, and app development.
+Machine Learning | Deep Learning | AI  
+HuggingFace: https://huggingface.co/nandabr  
+
+---
+
+## 📜 License
+
+Open-source under MIT License.
