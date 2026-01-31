@@ -1,5 +1,4 @@
 streamlit==1.28.0
 numpy==1.26.4
 pillow==10.4.0
-tflite-runtime==2.14.0
-
+tflite-runtime==2.14.0; platform_machine!="aarch64"
