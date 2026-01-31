@@ -2,13 +2,11 @@ import os
 os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
 
 import streamlit as st
-import tensorflow.lite as tflite
+import tflite_runtime.interpreter as tflite
 import numpy as np
 from PIL import Image
 
-# -------------------------
-# LOAD TFLITE MODEL
-# -------------------------
+# Load TFLite model
 MODEL_PATH = "models/fruit_model.tflite"
 
 interpreter = tflite.Interpreter(model_path=MODEL_PATH)
@@ -17,13 +15,11 @@ interpreter.allocate_tensors()
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 
-# Class names must match training order
+# Class names (same order as training)
 class_names = ['Apple Red 1', 'Banana 1', 'Grape White 1', 'Mango 1']
 
 
-# -------------------------
-# PREDICTION FUNCTION
-# -------------------------
+# Prediction function
 def predict_image(image):
     img = image.resize((100, 100))
     img_array = np.array(img, dtype=np.float32) / 255.0
@@ -36,24 +32,21 @@ def predict_image(image):
     return pred
 
 
-# -------------------------
-# STREAMLIT UI
-# -------------------------
+# Streamlit UI
 st.set_page_config(page_title="Fruit Image Classifier", layout="centered")
 
 st.title("🍎 Fruit Image Classifier")
-st.write("Upload an image of a fruit, and the model will predict which fruit it is.")
+st.write("Upload an image of a fruit and the model will predict it.")
 
-uploaded_file = st.file_uploader("Choose a fruit image:", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("Choose a fruit image", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file).convert("RGB")
 
     st.image(image, caption="Uploaded Image", use_column_width=True)
-
     st.write("Predicting...")
-    pred = predict_image(image)
 
+    pred = predict_image(image)
     class_index = np.argmax(pred)
     confidence = np.max(pred)
 
